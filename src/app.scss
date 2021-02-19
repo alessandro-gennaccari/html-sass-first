@@ -1,3 +1,4 @@
+$font: 'Montserrat', sans-serif;
 $head_foot_height: 80px;
 $head_foot_bg_color: #f08080;
 $father_height: 100%;
@@ -24,6 +25,7 @@ $p_relative: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: $font;
 }
 
 header , footer {
