@@ -3,3 +3,47 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+header, footer {
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  background-color: #f08080;
+}
+
+main {
+  text-align: center;
+  height: calc(100vh - 160px);
+}
+main .left-column, main .center-column, main .right-column {
+  float: left;
+  height: 100%;
+  padding: 20px;
+  position: relative;
+}
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+main .left-column, main .right-column {
+  width: 20%;
+  background-color: #add8e6;
+}
+main .left-column span, main .right-column span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main .center-column {
+  width: 60%;
+  background-color: #ffa500;
+}
+main .center-column h1 {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

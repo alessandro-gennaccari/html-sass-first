@@ -1,5 +1,65 @@
+$head_foot_height: 80px;
+$head_foot_bg_color: #f08080;
+$father_height: 100%;
+$text_center: center;
+$title_color: white;
+$box-padding: 20px;
+$p_relative: relative;
+
+
+@mixin clearFix {
+    content: '';
+    display: table;
+    clear: both;
+} 
+
+@mixin posCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+header , footer {
+    height: $head_foot_height;
+    text-align: $text_center;
+    line-height: $head_foot_height;
+    background-color: $head_foot_bg_color;
+}
+
+main {
+    text-align: $text_center;
+    height: calc(100vh - #{$head_foot_height * 2});
+    .left-column, .center-column, .right-column {
+        float: left;
+        height: $father_height;
+        padding: $box-padding;
+        position: $p_relative;
+    }
+    &:after {
+        @include clearFix;
+    }
+    .left-column, .right-column {
+        width: 20%;
+        background-color: #add8e6;
+        span {
+            @include posCenter;
+        }
+    }
+    .center-column {
+        width: 60%;
+        background-color: #ffa500;
+        h1{
+            color: $title_color;
+            @include posCenter;
+        }
+    }
+}
+
+
